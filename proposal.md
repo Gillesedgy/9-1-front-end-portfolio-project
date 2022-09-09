@@ -2,6 +2,12 @@
 
 ## User Stories
 
-- As the user, I want to use the application to type in an input box or click on an initial link and search for a recipe based on the input, (e.g. tacos) so that a new recipe will appear based on the user's input.
+- As a user, When I visit the page I will first be presented woth the rules of the game (i.e About page, How to play)
 
-* Images and videos will be included for most recipes.
+* As a user, after reading the rules I'll click on a link (Im' Feeling Lucky")to start playing the game
+
+- As a user, when I visit the page I see set of 10 random cards, with answers hidden.
+
+* As a user, I Will take a guess by inputing answer in an input box
+
+* As a user, I would click the 'reveal' button to reveal the answer(s)
