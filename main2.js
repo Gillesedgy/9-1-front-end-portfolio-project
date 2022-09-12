@@ -1,1 +1,1 @@
-console.log("HAPPY FRIDAY");
+console.log("HI");

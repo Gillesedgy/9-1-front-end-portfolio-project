@@ -1,0 +1,38 @@
+* {
+  margin: 20px;
+  text-align: center;
+  box-sizing: border-box; /* mke sizing easier  */
+}
+body{
+  background-color: aqua;
+
+}
+.main-container{
+  padding: 0px;
+  margin: 0px;
+  border-radius: 10px;
+}
+header {
+  border: 3px solid black;
+  padding: 20px;
+}
+.main-container {
+  display: grid;
+  border: 3px dotted black;
+  background-color: whitesmoke;
+}
+.lucky-link: {
+  
+}
+.aside1,
+.aside2 {
+  border: 2px solid black;
+  /* margin: 10px; */
+}
+
+.begin:mous{
+
+}
+.check-answer:hover {
+  background-color: greenyellow;
+}
