@@ -3,14 +3,15 @@
   text-align: center;
   box-sizing: border-box; /* mke sizing easier  */
 }
-body{
+body {
   background-color: aqua;
-
 }
-.main-container{
+.main-container {
+  font-weight: bold;
   padding: 0px;
   margin: 0px;
   border-radius: 10px;
+  background-image: url("https://previews.123rf.com/images/belchonock/belchonock1207/belchonock120702214/14370943-paper-for-recipes-vegetables-and-spices-on-green-background.jpg");
 }
 header {
   border: 3px solid black;
@@ -21,8 +22,8 @@ header {
   border: 3px dotted black;
   background-color: whitesmoke;
 }
-.lucky-link: {
-  
+main {
+  background-image: url("https://unsplash.com/photos/vA1L1jRTM70");
 }
 .aside1,
 .aside2 {
@@ -30,9 +31,8 @@ header {
   /* margin: 10px; */
 }
 
-.begin:mous{
-
+.begin:mous {
 }
-.check-answer:hover {
+.search-btn:hover {
   background-color: greenyellow;
 }
