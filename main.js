@@ -1,6 +1,3 @@
-// const input = input.value; //
-// const Base_URL = `https://www.cheapshark.com/api/1.0/games?title=`;
-
 const form = document.querySelector("form");
 const header = document.querySelector(".header");
 const mainContainer = document.getElementsByClassName("main-container li");
@@ -10,10 +7,7 @@ const luckyBtn = document.querySelector(".Lucky-btn");
 const aside1 = document.getElementsByClassName("aise1");
 const aside2 = document.querySelector(".aside2 ul");
 const searchBar = document.getElementById("search-bar");
-
 const luckyLink = document.querySelector(".lucky-link");
-console.log(searchBar);
-// //! DONT FORGET TO FIX event listener to proper selector for btn functionality
 
 const options = {
   method: "GET",
@@ -27,39 +21,40 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   mainP.innerHTML = "";
   let input = searchBar.value; //! user input
-  console.log(input);
+
   fetch(`https://themealdb.p.rapidapi.com/search.php?s=${input}`, options)
     .then((response) => response.json())
     .then((resJson) => {
-      // console.log(resJson)
-      console.log(resJson.meals);
+      console.log(resJson);
 
       resJson.meals.forEach((meal) => {
         const article = document.createElement("article");
         article.classList.add("card");
         mainP.append(article);
-        //! IMAGE NOT WORKING, MUST FIX
+      
         const img = document.createElement("img");
-        img.innerHTML = meal.strMealThumb;
+        // img. = meal.strMealThumb;
+        console.log(img)
+        img.setAttribute(
+          "src", `${meal.strMealThumb}`);
 
         const mealName = document.createElement("h2");
         mealName.innerHTML = meal.strMeal;
-        console.log(mealName);
         //!
         const mealInstruction = document.createElement("p");
         mealInstruction.innerHTML = meal.strInstructions;
         mealInstruction.classList.add("hidden");
 
         //? need to somehow print all the steps for measure and ingredients...
-        // const measure = document.createElement("ol");
-        // measure.innerHTML = meal.strMeasure;
-        // console.log(measure);
+        const measure = document.createElement("ol");
+        measure.innerHTML = meal.strMeasure;
+        console.log(measure);
 
         const videoLink = document.createElement("a");
         videoLink.innerText = "Watch Video";
         // videoLink.href = "#";
         videoLink.setAttribute("href", meal.strYoutube);
-        videoLink.setAttribute("target", "_blank"); //!open in new tab
+        videoLink.setAttribute("target", "_blank"); //!Open in new tab
         // main.append(img);
 
         //! Button
@@ -68,14 +63,8 @@ form.addEventListener("submit", (e) => {
         InstructionBtn.addEventListener("click", () => {
           mealInstruction.classList.toggle("hidden");
         });
-
-        article.append(
-          img,
-          mealName,
-          mealInstruction,
-          videoLink,
-          InstructionBtn
-        );
+        // aside1.append(img);
+        article.append(img, mealName, mealInstruction, videoLink, InstructionBtn);
       });
       form.reset();
     })

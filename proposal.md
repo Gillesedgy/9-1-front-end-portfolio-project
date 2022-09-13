@@ -2,7 +2,7 @@
 
 ## User Stories
 
-- As a user, When I visit the page I will first be presented woth the rules of the game (i.e About page, How to play)
+- As a user, When I visit the page I will first be presented with the rules of the game (i.e About page, How to play)
 
 * As a user, after reading the rules I'll click on a link (Im' Feeling Lucky")to start playing the game
 
