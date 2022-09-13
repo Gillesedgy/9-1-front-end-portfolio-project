@@ -2,12 +2,10 @@
 
 ## User Stories
 
-- As a user, When I visit the page I will first be presented with the rules of the game (i.e About page, How to play)
+- As a user, When I visit the website I will see a link that will take me to a random recipe as well as an input search option.
 
-* As a user, after reading the rules I'll click on a link (Im' Feeling Lucky")to start playing the game
+* As a user, I can click to a link that will take me to a second page
 
-- As a user, when I visit the page I see set of 10 random cards, with answers hidden.
+- As a user, I can type a meal name and will be presented with a list of recipes. I can also be very specific about my meal name (i.e: Arrabiata)
 
-* As a user, I Will take a guess by inputing answer in an input box
-
-* As a user, I would click the 'reveal' button to reveal the answer(s)
+* As a user after finding my meal, I can click on a link that will take me to a video that shoes a quick demo.
