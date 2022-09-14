@@ -4,7 +4,7 @@ const mainContainer = document.getElementsByClassName("main-container li");
 const mainP = document.querySelector("main p");
 const searchBtn = document.querySelector(".search-btn");
 const luckyBtn = document.querySelector(".Lucky-btn");
-const aside1 = document.querySelector(".first-aside p");
+const aside1 = document.querySelector(".recipe ");
 const aside2 = document.querySelector(".aside2 ul");
 const searchBar = document.getElementById("search-bar");
 const luckyLink = document.querySelector(".lucky-link");
@@ -17,8 +17,16 @@ const options = {
   },
 };
 // let URL = `https://themealdb.p.rapidapi.com/search.php?s=`
+//! Header title/author, create emelents for
+const title = document.createElement("h1");
+title.innerHTML = `The Munu`;
+header.append(title);
+const author = document.createElement("p");
+author.innerHTML = "by Edgy Gilles";
+header.append(author);
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  aside1.innerHTML = "";
   mainP.innerHTML = "";
   let input = searchBar.value; //! user input
 
@@ -27,15 +35,19 @@ form.addEventListener("submit", (e) => {
     .then((resJson) => {
       console.log(resJson);
 
+      if (resJson.status && resJson.status == 404) {
+       const p = document.createElement("p")
+       p.innerHTML=`This is not a real meal`
+       aside1.append(p)
+      }
       resJson.meals.forEach((meal) => {
         const article = document.createElement("article");
         article.classList.add("card");
         aside1.append(article);
-      
+
         const img = document.createElement("img");
-        console.log(img)
-        img.setAttribute(
-          "src", `${meal.strMealThumb}`);
+        console.log(img);
+        img.setAttribute("src", `${meal.strMealThumb}`);
 
         const mealName = document.createElement("h2");
         mealName.innerHTML = meal.strMeal;
@@ -55,7 +67,7 @@ form.addEventListener("submit", (e) => {
         videoLink.setAttribute("href", meal.strYoutube);
         videoLink.setAttribute("target", "_blank"); //!Open in new tab
         // main.append(img);
-//? include tags 
+        //? include tags
         //! Button
         const InstructionBtn = document.createElement("button");
         InstructionBtn.innerText = "Show Instructions";
@@ -63,7 +75,18 @@ form.addEventListener("submit", (e) => {
           mealInstruction.classList.toggle("hidden");
         });
         // aside1.append(img);
-        article.append(img, mealName, mealInstruction, videoLink, InstructionBtn);
+        article.append(
+          img,
+          mealName,
+          mealInstruction,
+          videoLink,
+          InstructionBtn
+        );
+
+        //! ingredients
+        //           for(strIngredient in resJson.meals){
+        // if()
+        //           }
       });
       form.reset();
     })
