@@ -8,7 +8,6 @@ const aside1 = document.querySelector(".recipe ");
 const aside2 = document.querySelector(".aside2 ul");
 const searchBar = document.getElementById("search-bar");
 const luckyLink = document.querySelector(".lucky-link");
-
 const options = {
   method: "GET",
   headers: {
@@ -19,7 +18,7 @@ const options = {
 // let URL = `https://themealdb.p.rapidapi.com/search.php?s=`
 //! Header title/author, create emelents for
 const title = document.createElement("h1");
-title.innerHTML = `The Munu`;
+title.innerHTML = `The Menu`;
 header.append(title);
 const author = document.createElement("p");
 author.innerHTML = "by Edgy Gilles";
@@ -36,9 +35,9 @@ form.addEventListener("submit", (e) => {
       console.log(resJson);
 
       if (resJson.status && resJson.status == 404) {
-       const p = document.createElement("p")
-       p.innerHTML=`This is not a real meal`
-       aside1.append(p)
+        const p = document.createElement("p");
+        p.innerHTML = `This is not a real meal`;
+        aside1.append(p);
       }
       resJson.meals.forEach((meal) => {
         const article = document.createElement("article");
