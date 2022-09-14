@@ -8,4 +8,4 @@
 
 - As a user, I can type a meal name and will be presented with a list of recipes. I can also be very specific about my meal name (i.e: Arrabiata)
 
-* As a user after finding my meal, I can click on a link that will take me to a video that shoes a quick demo.
+* As a user after finding my meal, I can click on a link that will take me to a video that shows a quick demo.

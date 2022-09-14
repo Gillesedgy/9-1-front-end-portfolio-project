@@ -4,7 +4,7 @@ const mainContainer = document.getElementsByClassName("main-container li");
 const mainP = document.querySelector("main p");
 const searchBtn = document.querySelector(".search-btn");
 const luckyBtn = document.querySelector(".Lucky-btn");
-const aside1 = document.getElementsByClassName("aise1");
+const aside1 = document.querySelector(".first-aside p");
 const aside2 = document.querySelector(".aside2 ul");
 const searchBar = document.getElementById("search-bar");
 const luckyLink = document.querySelector(".lucky-link");
@@ -30,10 +30,9 @@ form.addEventListener("submit", (e) => {
       resJson.meals.forEach((meal) => {
         const article = document.createElement("article");
         article.classList.add("card");
-        mainP.append(article);
+        aside1.append(article);
       
         const img = document.createElement("img");
-        // img. = meal.strMealThumb;
         console.log(img)
         img.setAttribute(
           "src", `${meal.strMealThumb}`);
@@ -56,7 +55,7 @@ form.addEventListener("submit", (e) => {
         videoLink.setAttribute("href", meal.strYoutube);
         videoLink.setAttribute("target", "_blank"); //!Open in new tab
         // main.append(img);
-
+//? include tags 
         //! Button
         const InstructionBtn = document.createElement("button");
         InstructionBtn.innerText = "Show Instructions";
