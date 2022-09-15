@@ -13,12 +13,20 @@ fetch("https://themealdb.p.rapidapi.com/random.php", options)
   .then((response) => response.json())
   .then((res) => {
     console.log(res.meals);
+
+
     // console.log(Object.values(res.meals[0])); //
     // console.log(Object.keys(res.meals[0])); //
 
     // for( const entry of Object.entries(res.meals[0])){
     //     console.log(`${entry[0]}: ${entry[1]}`)
     // }
+
+
+
+
+
+
     const meal = res.meals[0];
     console.log(meal);
     const article2 = document.createElement("article");

@@ -32,7 +32,7 @@ form.addEventListener("submit", (e) => {
   fetch(`https://themealdb.p.rapidapi.com/search.php?s=${input}`, options)
     .then((response) => response.json())
     .then((resJson) => {
-      console.log(resJson);
+      // console.log(resJson.meals);
 
       if (resJson.status && resJson.status == 404) {
         const p = document.createElement("p");
@@ -45,7 +45,7 @@ form.addEventListener("submit", (e) => {
         aside1.append(article);
 
         const img = document.createElement("img");
-        console.log(img);
+        // console.log(img);
         img.setAttribute("src", `${meal.strMealThumb}`);
 
         const mealName = document.createElement("h2");
@@ -56,9 +56,9 @@ form.addEventListener("submit", (e) => {
         mealInstruction.classList.add("hidden");
 
         //? need to somehow print all the steps for measure and ingredients...
-        const measure = document.createElement("ol");
-        measure.innerHTML = meal.strMeasure;
-        console.log(measure);
+        // const measure = document.createElement("ol");
+        // measure.innerHTML = meal.strMeasure;
+        // console.log(measure);
 
         const videoLink = document.createElement("a");
         videoLink.innerText = "Watch Video";
@@ -73,6 +73,14 @@ form.addEventListener("submit", (e) => {
         InstructionBtn.addEventListener("click", () => {
           mealInstruction.classList.toggle("hidden");
         });
+        for (let i = 0; i <= 20; i++) {
+          let ingrd = "strIngredient" + i;
+          let meas = "strMeasure" + i;
+          if (meal[ingrd]) {
+            console.log(meal[ingrd], meal[meas]);
+          }
+        }
+        console.log(meal);
         // aside1.append(img);
         article.append(
           img,
