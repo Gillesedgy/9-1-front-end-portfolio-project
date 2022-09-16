@@ -28,6 +28,7 @@ ol {
   font-size: 14px;
   margin-left: 100px;
 }
+/* ! will add animation to img to flip and show instructions on the back soon..  */
 img:hover {
   opacity: 0.8;
 }
@@ -36,8 +37,29 @@ img {
   width: 300px;
   height: 300px;
 }
+body{
+    /* background-image: url('https://t3.ftcdn.net/jpg/03/22/33/66/360_F_322336690_NqazmkDS5qUVCA3SXxoI0hkZuQqzNb5a.jpg'); */
+    /* background-repeat: no-repeat; */
+    background-color: maroon;
+  }
 
 .comtainer {
   display: grid;
   grid-template-columns: 1fr;
 }
+@media (max-width: 1080px) {
+    header {
+      background-color: rgb(127, 41, 41);
+    }
+    img {
+      width: 15opx;
+      height: 15opx;
+    }
+    aside article {
+      grid-template-columns: 1fr;
+    }
+    body{
+        /* background-image: url('https://t3.ftcdn.net/jpg/03/22/33/66/360_F_322336690_NqazmkDS5qUVCA3SXxoI0hkZuQqzNb5a.jpg'); */
+        /* background-repeat: no-repeat; */
+        background-color: maroon;
+      }
