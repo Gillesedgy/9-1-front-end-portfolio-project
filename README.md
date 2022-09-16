@@ -19,7 +19,9 @@ Once you decide on your recipe, GO AND ENJOY!!
 4. Click the shuffle icon under the header to get a random meal
 5. Type in the search bar, a meal name, recipe, or food ingredient
 6. Once you find your recipe/meal, click on the ‘See Instructions’ button to see the steps.
-7. There is
+7. There is also a Youtube Link that will open a new page for most of the recipes.
+8. Enjoy!
+9. 
 
 ### User Stories
 
