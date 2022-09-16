@@ -1,32 +1,10 @@
 const main = document.querySelector("main p");
 const container = document.querySelector(".container");
 
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "b5b93f8d91mshbf7752d57342d87p1ff623jsn8aa205648c63",
-    "X-RapidAPI-Host": "themealdb.p.rapidapi.com",
-  },
-};
-
-fetch("https://themealdb.p.rapidapi.com/random.php", options)
+fetch("https://themealdb.p.rapidapi.com/random.php", KEY)
   .then((response) => response.json())
   .then((res) => {
     console.log(res.meals);
-
-
-    // console.log(Object.values(res.meals[0])); //
-    // console.log(Object.keys(res.meals[0])); //
-
-    // for( const entry of Object.entries(res.meals[0])){
-    //     console.log(`${entry[0]}: ${entry[1]}`)
-    // }
-
-
-
-
-
-
     const meal = res.meals[0];
     console.log(meal);
     const article2 = document.createElement("article");
@@ -38,15 +16,51 @@ fetch("https://themealdb.p.rapidapi.com/random.php", options)
     img.setAttribute("src", `${meal.strMealThumb}`);
 
     const mealName = document.createElement("h2");
-    mealName.innerHTML= meal.strMeal;
+    mealName.innerHTML = meal.strMeal;
     const mealInstruction = document.createElement("p");
-    mealInstruction.innerHTML = meal.strInstructions;
-    mealInstruction.classList.add("hidden");
+    // mealInstruction.innerHTML = meal.strInstructions;
+    // mealInstruction.classList.add("hidden");
     const videoLink = document.createElement("a");
     videoLink.innerText = "Watch Video";
     // videoLink.href = "#";
     videoLink.setAttribute("href", meal.strYoutube);
-        videoLink.setAttribute("target", "_blank"); 
-        article2.append(mealName, img, mealInstruction, videoLink);
+    videoLink.setAttribute("target", "_blank");
+
+    //! Button to show instruction
+    const InstructionBtn = document.createElement("button");
+    InstructionBtn.innerText = "Show Instructions";
+    InstructionBtn.addEventListener("click", () => {
+      mealInstruction.classList.toggle("hidden");
+
+      mealInstruction.innerHTML = meal.strInstructions;
+      if (mealInstruction.style.display === "none") {
+        //! this SHOWS the form
+        mealInstruction.style.display = "block";
+        InstructionBtn.innerHTML = `Hide Instructions`;
+      } else {
+        //! this HIDES the form and CHANGES the button HTML to Show
+        mealInstruction.style.display = "none";
+        InstructionBtn.innerHTML = `Show Instructions`;
+      }
+    });
+    img.append(mealInstruction);
+    for (let i = 0; i <= 20; i++) {
+      let ingrd = "strIngredient" + i;
+      let meas = "strMeasure" + i;
+      if (meal[ingrd]) {
+        console.log(meal[ingrd], meal[meas]);
+        mealName.append(img);
+        const ol = document.createElement("ol");
+        ol.innerHTML = `${meal[ingrd]} - ${meal[meas]}`;
+        mealName.append(ol);
+      }
+      article2.append(
+        img,
+        mealName,
+        mealInstruction,
+        videoLink,
+        InstructionBtn
+      );
+    }
   })
   .catch((err) => console.error(err));

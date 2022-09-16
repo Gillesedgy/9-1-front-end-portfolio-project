@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Combo&display=swap");
+
+* {
+  font-family: Combo;
+  margin: 10px;
+}
+header {
+  display: grid;
+  border: 3px solid rebeccapurple;
+  padding: 30px;
+  text-align: center;
+}
+
+.container {
+ display: grid;
+ /* border: 3px solid red; */
+ /* grid-template-rows: ; */
+}
+.container:hover {
+    background-color: greenyellow;
+    background-color: transparent;
+    border: 2px solid #799be6;
+    box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+    border-radius: 20px;
+  }
+ol {
+  font-size: 14px;
+  margin-left: 100px;
+}
+img:hover {
+  opacity: 0.8;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.comtainer {
+  display: grid;
+  grid-template-columns: 1fr;
+}
