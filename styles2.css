@@ -6,23 +6,24 @@
 }
 header {
   display: grid;
-  border: 3px solid rebeccapurple;
+  background-color: brown;
+  border: 3px solid black;
   padding: 30px;
   text-align: center;
 }
 
 .container {
- display: grid;
- /* border: 3px solid red; */
- /* grid-template-rows: ; */
+  display: grid;
+  /* border: 3px solid red; */
+  /* grid-template-rows: ; */
 }
 .container:hover {
-    background-color: greenyellow;
-    background-color: transparent;
-    border: 2px solid #799be6;
-    box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
-    border-radius: 20px;
-  }
+  background-color: greenyellow;
+  background-color: transparent;
+  border: 2px solid #799be6;
+  box-shadow: 0 0 10px 0 blue inset, 0 0 10px 4px blue;
+  border-radius: 20px;
+}
 ol {
   font-size: 14px;
   margin-left: 100px;

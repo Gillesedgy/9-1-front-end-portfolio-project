@@ -21,8 +21,6 @@ form.addEventListener("submit", (e) => {
   aside1.innerHTML = "";
   mainP.innerHTML = "";
   let input = searchBar.value; //! user input
-  
-  
 
   fetch(`https://themealdb.p.rapidapi.com/search.php?s=${input}`, options)
     .then((response) => response.json())
@@ -30,6 +28,7 @@ form.addEventListener("submit", (e) => {
     .then((resJson) => {
       console.log(resJson.meals[0]);
       //! ERR message
+      
       // if (resJson.status && resJson.status == 404) {
       //   const p = document.createElement("p");
       //   p.innerHTML = `This is not a real meal`;
@@ -77,7 +76,6 @@ form.addEventListener("submit", (e) => {
           let ingrd = "strIngredient" + i;
           let meas = "strMeasure" + i;
           if (meal[ingrd]) {
-            console.log(meal[ingrd], meal[meas]);
             mealName.append(ul);
             const li = document.createElement("li");
             li.innerHTML = `${meal[ingrd]} - ${meal[meas]}`;
@@ -94,4 +92,6 @@ form.addEventListener("submit", (e) => {
       });
     })
     .catch((err) => console.error(err));
+  
 });
+
