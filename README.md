@@ -21,7 +21,6 @@ Once you decide on your recipe, GO AND ENJOY!!
 6. Once you find your recipe/meal, click on the ‘See Instructions’ button to see the steps.
 7. There is also a Youtube Link that will open a new page for most of the recipes.
 8. Enjoy!
-9. 
 
 ### User Stories
 
