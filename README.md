@@ -12,6 +12,8 @@ Once you decide on your recipe, GO AND ENJOY!!
 #Instructions
 
                 Getting Started
+              
+LINK: https://github.com/Gillesedgy/9-1-front-end-portfolio-project              
 
 1. Clone this repository in your terminal
 2. Open VSCODE then Golive
