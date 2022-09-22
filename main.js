@@ -1,6 +1,10 @@
+// require("dotenv").config();
+// console.log(process.env);
+
 const form = document.querySelector("form");
 const header = document.querySelector(".header");
 const searchSeaction = document.getElementsByClassName("search-seaction li");
+const errSect = document.querySelector("header");
 const mainP = document.querySelector("main p");
 const searchBtn = document.querySelector(".search-btn");
 const randomBtn = document.querySelector(".random-btn");
@@ -16,8 +20,21 @@ header.append(title);
 const author = document.createElement("p");
 author.innerHTML = "by Edgy Gilles";
 header.append(author);
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  // if(typeof searchBar.value !== 'string'){
+  //   // const pError = document.createElement("p")
+  //   // pError.innerText= `Please Enter a meal Name `
+
+  //   // article.append(pError)
+  //   alert("Enter a name")
+  // }
+  // else{
+
+  // }
+
   aside1.innerHTML = "";
   mainP.innerHTML = "";
   let input = searchBar.value; //! user input
@@ -26,14 +43,6 @@ form.addEventListener("submit", (e) => {
     .then((response) => response.json())
 
     .then((resJson) => {
-      console.log(resJson.meals[0]);
-      //! ERR message
-      
-      // if (resJson.status && resJson.status == 404) {
-      //   const p = document.createElement("p");
-      //   p.innerHTML = `This is not a real meal`;
-      //   aside1.append(p);
-      // }
       resJson.meals.forEach((meal) => {
         const article = document.createElement("article");
         article.classList.add("card");
@@ -46,7 +55,7 @@ form.addEventListener("submit", (e) => {
         mealName.innerHTML = meal.strMeal;
         //!
         const mealInstruction = document.createElement("p");
-  
+        //!
         const videoLink = document.createElement("a");
         videoLink.innerText = "Watch Video";
         videoLink.setAttribute("href", meal.strYoutube);
@@ -57,31 +66,34 @@ form.addEventListener("submit", (e) => {
         InstructionBtn.innerText = "Show Instructions";
         InstructionBtn.addEventListener("click", () => {
           mealInstruction.classList.toggle("hidden");
-          // const mealInstruction = document.createElement("p");
+
           mealInstruction.innerHTML = meal.strInstructions;
           if (mealInstruction.style.display === "none") {
             //! this SHOWS the form
             mealInstruction.style.display = "block";
             InstructionBtn.innerHTML = `Hide Instructions`;
           } else {
-            //! this HIDES the form and CHANGES the button HTML to Show
+            //! This HIDES the form and CHANGES the button HTML to Show
             mealInstruction.style.display = "none";
             InstructionBtn.innerHTML = `Show Instructions`;
           }
         });
         img.append(mealInstruction);
+        //? err
+        // console.log(searchBar.value)
 
         //! ingredients and Measurements outside of forEach
         for (let i = 0; i <= 20; i++) {
           let ingrd = "strIngredient" + i;
           let meas = "strMeasure" + i;
-          if (meal[ingrd]) {
+          if (meas[ingrd]) {
             mealName.append(ul);
             const li = document.createElement("li");
             li.innerHTML = `${meal[ingrd]} - ${meal[meas]}`;
             mealName.append(li);
           }
         }
+
         article.append(
           img,
           mealName,
@@ -91,7 +103,6 @@ form.addEventListener("submit", (e) => {
         );
       });
     })
-    .catch((err) => console.error(err));
-  
-});
 
+    .catch((err) => console.error(err));
+});

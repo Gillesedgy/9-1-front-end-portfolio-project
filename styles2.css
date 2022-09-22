@@ -30,7 +30,7 @@ ol {
 }
 /* ! will add animation to img to flip and show instructions on the back soon..  */
 img:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 img {
@@ -40,7 +40,7 @@ img {
 body{
     /* background-image: url('https://t3.ftcdn.net/jpg/03/22/33/66/360_F_322336690_NqazmkDS5qUVCA3SXxoI0hkZuQqzNb5a.jpg'); */
     /* background-repeat: no-repeat; */
-    background-color: maroon;
+    /* background-color: grey; */
   }
 
 .comtainer {
@@ -61,5 +61,5 @@ body{
     body{
         /* background-image: url('https://t3.ftcdn.net/jpg/03/22/33/66/360_F_322336690_NqazmkDS5qUVCA3SXxoI0hkZuQqzNb5a.jpg'); */
         /* background-repeat: no-repeat; */
-        background-color: maroon;
+        /* background-color: maroon; */
       }
